@@ -1,0 +1,45 @@
+:root {
+  /* Cores */
+  --color-bg: #050505;
+  --color-bg-secondary: #0a0a0a;
+  --color-card: #111111;
+  --color-elevated: #181818;
+
+  --color-gold: #c5a46d;
+  --color-gold-light: #dfc58e;
+  --color-champagne: #e8d9be;
+
+  --color-white: #f6f3ed;
+  --color-white-secondary: #d9d5ce;
+  --color-gray: #9d9992;
+
+  --color-border: rgba(229, 204, 151, 0.24);
+  --color-shadow: rgba(0, 0, 0, 0.65);
+
+  /* Tipografia */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-script: 'Allura', 'Parisienne', cursive;
+
+  /* Espaçamento */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.25rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Layout */
+  --content-max-width: 860px;
+  --reading-max-width: 600px;
+  --side-padding: 24px;
+
+  /* Transições */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 400ms var(--ease-premium);
+  --transition-slow: 900ms var(--ease-premium);
+
+  /* Safe areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
