@@ -8,6 +8,13 @@ export function useScrollAnimation(options = {}) {
   onMounted(() => {
     if (!target.value) return
 
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReducedMotion) {
+      isVisible.value = true
+      return
+    }
+
     if (typeof IntersectionObserver === 'undefined') {
       isVisible.value = true
       return
@@ -18,13 +25,13 @@ export function useScrollAnimation(options = {}) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             isVisible.value = true
-            observer.unobserve(entry.target)
+            observer.disconnect()
           }
         })
       },
       {
-        threshold: options.threshold ?? 0.2,
-        rootMargin: options.rootMargin ?? '0px 0px -60px 0px'
+        threshold: options.threshold ?? 0.12,
+        rootMargin: options.rootMargin ?? '0px 0px -8% 0px'
       }
     )
 
