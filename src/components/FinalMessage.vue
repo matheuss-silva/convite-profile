@@ -19,16 +19,34 @@
       <p class="final-message__course">{{ graduate.course }}</p>
 
       <p class="final-message__signature gf-script">{{ texts.finalSignatureQuote }}</p>
+
+      <div class="final-message__confirmation">
+        <BaseButton
+          tag="a"
+          :href="confirmationUrl"
+          :icon="MessageCircle"
+          aria-label="Confirmar presença pelo WhatsApp"
+        >
+          {{ texts.confirmationButton }}
+        </BaseButton>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { MessageCircle } from 'lucide-vue-next'
+import BaseButton from './BaseButton.vue'
 import { invitationData } from '../config/invitation.js'
 import { useScrollAnimation } from '../composables/useScrollAnimation.js'
 
-const { texts, graduate, photos, photoPositions } = invitationData
+const { texts, graduate, event, photos, photoPositions } = invitationData
 const { target, isVisible } = useScrollAnimation()
+
+const confirmationUrl = computed(
+  () => `https://wa.me/${event.whatsapp}?text=${encodeURIComponent(texts.confirmationMessage)}`
+)
 </script>
 
 <style scoped>
@@ -120,5 +138,63 @@ const { target, isVisible } = useScrollAnimation()
   margin-top: 1.5rem;
   font-size: 1.6rem;
   color: var(--color-gold-light);
+}
+
+.final-message__confirmation {
+  width: min(100%, 300px);
+  margin: 1.75rem auto 0;
+}
+
+.final-message__confirmation :deep(.base-btn) {
+  animation: confirmation-glow 3.2s ease-in-out infinite;
+}
+
+.final-message__confirmation :deep(.base-btn__icon) {
+  animation: confirmation-icon 3.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes confirmation-glow {
+  0%,
+  55%,
+  100% {
+    border-color: var(--color-border);
+    box-shadow: 0 0 0 0 rgba(223, 197, 142, 0);
+  }
+  68% {
+    border-color: var(--color-gold-light);
+    box-shadow: 0 0 0 0 rgba(223, 197, 142, 0.38);
+  }
+  86% {
+    border-color: var(--color-gold-light);
+    box-shadow:
+      0 0 0 11px rgba(223, 197, 142, 0),
+      0 0 24px rgba(197, 164, 109, 0.2);
+  }
+}
+
+@keyframes confirmation-icon {
+  0%,
+  65%,
+  92%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  72% {
+    transform: translateY(-2px) rotate(-7deg) scale(1.08);
+  }
+  80% {
+    transform: translateY(0) rotate(6deg) scale(1.08);
+  }
+  87% {
+    transform: translateY(-1px) rotate(-3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-message__confirmation :deep(.base-btn),
+  .final-message__confirmation :deep(.base-btn__icon) {
+    animation: none;
+  }
 }
 </style>

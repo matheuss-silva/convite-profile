@@ -63,6 +63,9 @@ export const invitationData = {
     finalMessage:
       "Espero por vocês para celebrarmos juntos o encerramento de uma etapa e o início de uma nova história.",
     finalSignatureQuote: "A felicidade só é completa quando compartilhada.",
+    confirmationButton: "Confirmar presença",
+    confirmationMessage:
+      "Olá! Confirmo minha presença e estou muito feliz por celebrar este momento tão especial com você. Até lá!",
   },
 
   event: {
@@ -75,6 +78,7 @@ export const invitationData = {
     address: "",
     city: "Palmas - TO",
     mapsUrl: "https://maps.app.goo.gl/Ero8pZR5o4JSjCbe6",
+    whatsapp: "556384407251",
   },
 
   timeline: {
