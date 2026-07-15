@@ -98,7 +98,7 @@ const confirmationUrl = computed(
   z-index: 2;
   width: 100%;
   text-align: center;
-  padding: 0 var(--side-padding) calc(3.5rem + var(--safe-bottom));
+  padding: 0 var(--side-padding) calc(1.5rem + var(--safe-bottom));
 }
 
 .final-message__quote {
