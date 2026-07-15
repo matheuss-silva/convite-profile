@@ -17,7 +17,7 @@ export const invitationData = {
     slideHint: "Deslize para conhecer esta história",
 
     openingQuote:
-      "O diploma marca o fim de uma etapa, mas a verdadeira conquista foi vencer todas as vezes em que pensei que não conseguiria.",
+      "O diploma marca o fim de uma etapa, mas a verdadeira conquista foi seguir em frente mesmo quando pensei que não conseguiria.",
     openingQuoteHighlights: ["fim de uma etapa", "verdadeira conquista"],
 
     journeyTitle: "Uma história construída com coragem",
@@ -30,7 +30,7 @@ export const invitationData = {
     parentsSecondaryMessage:
       "Cada renúncia de vocês abriu caminho para que eu pudesse chegar até aqui. Meu diploma também leva o nome de quem sempre segurou a minha mão.",
     parentsSignature:
-      "Meu coração transborda de gratidão. Esta vitória tem o nome, o amor e o sacrifício de vocês,",
+      "Meu coração transborda de gratidão. Esta vitória carrega o nome, o amor e os sacrifícios de vocês.",
 
     familyQuote: "Essa conquista é nossa.",
     familyQuoteHighlight: "nossa",
@@ -44,12 +44,12 @@ export const invitationData = {
     sonSignature: "Por você e para você.",
 
     centralMessage:
-      "Este convite não anuncia apenas uma formatura. Ele conta a história de uma menina que sonhou, de uma mulher que lutou, de uma mãe que encontrou forças onde parecia não haver mais e de uma família que jamais deixou de acreditar. Hoje, celebramos juntos uma conquista que pertence a todos nós.",
+      "Mais do que uma formatura, este convite celebra uma vida transformada pela perseverança. Cada obstáculo fortaleceu meus passos, cada lágrima teve um propósito e cada pessoa que caminhou comigo faz parte desta conquista.",
     centralHighlights: [
-      "uma menina que sonhou",
-      "uma mulher que lutou",
-      "uma mãe que encontrou forças",
-      "uma conquista que pertence a todos nós",
+      "uma vida transformada pela perseverança",
+      "Cada obstáculo fortaleceu meus passos",
+      "cada lágrima teve um propósito",
+      "cada pessoa que caminhou comigo",
     ],
 
     transitionText: "Agora é hora de celebrar.",
@@ -61,7 +61,7 @@ export const invitationData = {
 
     finalQuote: "Esta conquista também pertence a vocês.",
     finalMessage:
-      "Espero vocês para celebrar comigo o encerramento de uma etapa e o início de uma nova história.",
+      "Espero por vocês para celebrarmos juntos o encerramento de uma etapa e o início de uma nova história.",
     finalSignatureQuote: "A felicidade só é completa quando compartilhada.",
   },
 

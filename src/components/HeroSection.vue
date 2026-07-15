@@ -10,15 +10,17 @@
     <div class="hero__gradient hero__gradient--top" aria-hidden="true"></div>
     <div class="hero__gradient hero__gradient--bottom" aria-hidden="true"></div>
 
-    <div class="hero__content">
-      <p class="hero__eyebrow gf-hero-in-1">Convite de Formatura</p>
-      <h1 class="hero__name gf-hero-in-2">{{ graduate.name }}</h1>
-      <p class="hero__course gf-hero-in-3">{{ graduate.course }}</p>
-    </div>
+    <div class="hero__overlay">
+      <div class="hero__content">
+        <p class="hero__eyebrow gf-hero-in-1">Convite de Formatura</p>
+        <h1 class="hero__name gf-hero-in-2">{{ graduate.name }}</h1>
+        <p class="hero__course gf-hero-in-3">{{ graduate.course }}</p>
+      </div>
 
-    <div class="hero__scroll gf-hero-in-4">
-      <p class="hero__scroll-text">{{ texts.slideHint }}</p>
-      <ChevronDown class="gf-scroll-cue" :size="22" aria-hidden="true" />
+      <div class="hero__scroll gf-hero-in-4">
+        <p class="hero__scroll-text">{{ texts.slideHint }}</p>
+        <ChevronDown class="gf-scroll-cue" :size="22" aria-hidden="true" />
+      </div>
     </div>
   </section>
 </template>
@@ -81,12 +83,21 @@ const { graduate, texts, photos, photoPositions } = invitationData
   );
 }
 
-.hero__content {
+.hero__overlay {
   position: relative;
   z-index: 3;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: calc(1.5rem + var(--safe-bottom));
+}
+
+.hero__content {
+  width: 100%;
   text-align: center;
-  padding: 0 var(--side-padding) 5.5rem;
+  padding: 0 var(--side-padding);
 }
 
 .hero__eyebrow {
@@ -116,15 +127,12 @@ const { graduate, texts, photos, photoPositions } = invitationData
 }
 
 .hero__scroll {
-  position: absolute;
-  bottom: calc(1.5rem + var(--safe-bottom));
-  left: 0;
-  right: 0;
-  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  padding: 0 var(--side-padding);
+  text-align: center;
 }
 
 .hero__scroll-text {
@@ -134,6 +142,7 @@ const { graduate, texts, photos, photoPositions } = invitationData
   text-transform: uppercase;
   color: var(--color-white-secondary);
   opacity: 0.85;
+  line-height: 1.5;
 }
 
 .hero__scroll :deep(svg) {

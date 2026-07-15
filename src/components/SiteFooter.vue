@@ -6,7 +6,6 @@
   >
     <hr class="gf-divider" />
     <p class="site-footer__name">{{ graduate.name }}</p>
-    <p class="site-footer__year">{{ graduate.classYear }}</p>
 
     <button type="button" class="site-footer__top" @click="scrollToTop">
       <ArrowUp :size="16" aria-hidden="true" />
@@ -39,8 +38,16 @@ const scrollToTop = () => {
 
 <style scoped>
 .site-footer {
-  background: var(--color-bg-secondary);
-  padding: var(--space-xl) var(--side-padding)
+  position: relative;
+  z-index: 3;
+  margin-top: -4rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0) 0,
+    rgba(10, 10, 10, 0.5) 2rem,
+    var(--color-bg-secondary) 4rem
+  );
+  padding: calc(var(--space-xl) + 2rem) var(--side-padding)
     calc(var(--space-lg) + var(--safe-bottom));
   text-align: center;
 }
